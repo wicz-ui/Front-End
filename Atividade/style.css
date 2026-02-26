@@ -1,0 +1,45 @@
+h1{
+    margin: 30px;
+}
+#banner{
+    width: 100%;
+}
+
+h2{
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+
+#missão{
+    font-size: 20px;
+    font-style: italic;
+}
+
+em{
+    color: rgb(255,0,0);
+}
+
+h3{
+    text-align: center;
+}
+ul{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    margin-right: 15%;
+}
+
+#beneficios{
+    width: 50%;
+
+}
+
+.principal{
+    padding: 20px;
+}
+
+.beneficios{
+    padding: 20px;
+}
