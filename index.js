@@ -2,7 +2,9 @@
 document.addEventListener('DOMContentLoaded', function(){
   const links = document.querySelectorAll('nav a');
   const sections = document.querySelectorAll('main section');
+  const animElements = document.querySelectorAll('[class*="animate-"]');
 
+  // Smooth scroll
   links.forEach(link => {
     link.addEventListener('click', function(e){
       e.preventDefault();
@@ -13,6 +15,26 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 
+  // Intersection Observer para animações ao scroll
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver(function(entries){
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.style.opacity = '1';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  animElements.forEach(el => {
+    observer.observe(el);
+  });
+
+  // Destaque de navegação ao rolar
   function highlightNav(){
     const fromTop = window.scrollY + 140;
     let activeFound = false;
@@ -34,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function(){
       }
     });
     if(!activeFound){
-      // fallback: keep header white
       document.querySelector('header').style.color = getComputedStyle(document.documentElement).getPropertyValue('--white').trim();
     }
   }
