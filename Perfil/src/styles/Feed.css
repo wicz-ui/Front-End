@@ -1,0 +1,25 @@
+.feed {
+  width: 100%;
+  max-width: 800px;
+}
+
+.feed h2 {
+  margin-bottom: 15px;
+  color: #333333;
+  font-size: 24px;
+}
+
+.feed-header-card {
+  background: #ffffff;
+  padding: 16px 20px;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  width: fit-content;
+}
+
+.feed-header-card h2 {
+  margin: 0;
+  color: #333333;
+  font-size: 22px;
+}
